@@ -24,14 +24,3 @@ set :environment, :development
 every 1.minute do
   runner "BatchUpdate.execute"
 end
-every 1.minute do
-  runner "BatchUpdate.blog_count"
-end
-#every :monday, :at => '4:30 am' do
-every 3.minute do
-	runner "BatchUpdate.blog_count_week"
-end
-
-every 5.minute do
-	runner "BatchUpdate.blog_count_month"
-end

@@ -1,5 +1,11 @@
 class StockController < ApplicationController
-	def show
+
+  def show
+    id = params[:id].to_i
+    @stocks = Stock.all[id*100..id*100+99]
+  end
+
+	def tanaka
 		@stock = Stock.find(params[:id])
 
     url = "http://stocks.finance.yahoo.co.jp/stocks/detail/?code=8411"
