@@ -1,8 +1,8 @@
 require "bundler/capistrano"
 
-server "106.186.23.82", :web, :app, :db, primary: true
+server "106.187.54.79", :web, :app, :db, primary: true
 
-set :application, "kabudata"
+set :application, "stockinfo"
 set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
