@@ -2,29 +2,9 @@ Stockinfo::Application.routes.draw do
 
   resources :stock
 
-  resources :blogs do
-    member do
-      get :count_in, :out
-    end
-  end
-
-  resources :boards do
-    member do
-      post :post_comment
-    end
-    collection do
-      get 'list'
-    end
-  end
 
   resources :welcome
   root :to => 'welcome#index'
-  get "page/address_index"
-  get "page/consultant"
-  get "page/brokerage"
-  get "page/inquiry"
-  get "page/rise"
-  post "page/register_address"
   match ':controller(/:action(/:id))(.:format)'
 
 

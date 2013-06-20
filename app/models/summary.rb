@@ -1,3 +1,3 @@
 class Summary < ActiveRecord::Base
-  attr_accessible :comparison, :price
+  attr_accessible :price, :comparison
 end

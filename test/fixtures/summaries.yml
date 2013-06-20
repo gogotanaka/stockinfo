@@ -2,8 +2,6 @@
 
 one:
   price: MyString
-  comparison: MyString
 
 two:
   price: MyString
-  comparison: MyString

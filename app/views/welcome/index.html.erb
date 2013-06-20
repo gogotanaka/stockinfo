@@ -34,10 +34,6 @@
               <td><%= stock.high %></td>
               <td><%= stock.low %></td>
               <td>
-                <% board = Board.find_by_stock_id(stock.id) %>
-                <% if board %>
-                  <%= link_to '掲示板へ', board %>
-                <% end %>
               </td>
             </tr>
           <% end %>

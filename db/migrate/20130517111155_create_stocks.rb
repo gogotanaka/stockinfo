@@ -12,6 +12,8 @@ class CreateStocks < ActiveRecord::Migration
       t.string :high
       t.string :low
       t.string :chart
+      t.text :twitter
+      t.text :yahoo
       t.timestamps
     end
     add_index :stocks, :code
