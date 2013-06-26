@@ -32,8 +32,8 @@
       <td><%= stock.high %></td>
       <td><%= stock.low %></td>
       <td><%= stock.chart %></td>
-      <td><%= stock.twitter %></td>
-      <td><%= stock.yahoo %></td>
+      <td><%= stock.twitter.html_safe %></td>
+      <td><%= stock.yahoo.html_safe %></td>
       <td><%= complete_time(stock.updated_at) %></td>
     </tr>
 
