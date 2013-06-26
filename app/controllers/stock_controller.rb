@@ -2,7 +2,7 @@ class StockController < ApplicationController
 
   def show
     id = params[:id].to_i
-    @stocks = Stock.order("updated_at DESC").all[id*100..id*100+99]
+    @stocks = Stock.order("code DESC").all[id*100..id*100+99]
   end
 
   def info
