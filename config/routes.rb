@@ -1,8 +1,10 @@
 Stockinfo::Application.routes.draw do
 
-  resources :stock
-
-
+  resources :stock do
+    member do
+      get :info
+    end
+  end
   resources :welcome
   root :to => 'welcome#index'
   match ':controller(/:action(/:id))(.:format)'
