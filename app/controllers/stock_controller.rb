@@ -2,7 +2,8 @@ class StockController < ApplicationController
 
   def show
     id = params[:id].to_i
-    @stocks = Stock.order("code DESC").all[id*100..id*100+99]
+    span = params[:span] ? params[:span].to_i : 100
+    @stocks = Stock.order("code DESC").all[id*span..id*span+(span-1)]
   end
 
   def info
