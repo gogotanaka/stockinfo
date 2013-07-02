@@ -24,6 +24,3 @@ set :environment, :development
 every 1.minute do
   runner "BatchUpdate.execute"
 end
-every 1.minute do
-  runner "BatchUpdate.addinfo"
-end

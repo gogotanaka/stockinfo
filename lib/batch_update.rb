@@ -6,8 +6,8 @@ class BatchUpdate
   SC_OK = "200"
 
   def self.execute
-  	start = Time.now.strftime("%M").to_i
-    Stock.all[start*59..(start+1)*59].each do |stock|
+  	start = Time.now.strftime("%M").to_i/2
+    Stock.all[start*120..start*120+119].each do |stock|
     	@stockCode = stock.code
       html = self.convert("http://stocks.finance.yahoo.co.jp/stocks/detail/?code=#{@stockCode}")
       date = html.css('div.innerDate dd').map{|x| x.css('strong').inner_text }
@@ -67,7 +67,7 @@ class BatchUpdate
           volume: date[4],
           price: html.css('table.stocksTable td.stoksPrice')[1].content,
           name: html.css('table.stocksTable th.symbol h1').inner_text,
-          code: x,
+          code: x.to_i,
           market: html.css('div.stocksDtlWp dd')[0].content,
           chart: html.css("div.styleChart img")[0][:src]
           )
