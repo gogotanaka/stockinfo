@@ -16,7 +16,7 @@ class BatchUpdate
       yahoo = yahoo.css("div.s_res").to_html unless yahoo.nil?
       #twitter
       url = URI.encode("http://t-proj.net/twitter/?q=" + stock.name)
-      twitter = self.convert(url).css("div.twitter_status")[0]
+      twitter = self.convert(url).css("div.twitter_status")
       twitter = twitter.to_html unless twitter.nil?
       stock.update_attributes(
         previousprice: date[0],
