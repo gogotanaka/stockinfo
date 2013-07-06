@@ -25,12 +25,9 @@ class BatchUpdate
         low: date[3],
         volume: date[4],
         price: html.css('table.stocksTable td.stoksPrice')[1].content,
-        name: html.css('table.stocksTable th.symbol h1').inner_text,
-        market: html.css('div.stocksDtlWp dd')[0].content,
         chart: html.css("div.styleChart img")[0][:src],
         yahoo: yahoo,
-        twitter: twitter,
-        industry: html.css(".stocksDtl dd")[1].inner_text
+        twitter: twitter
       	)
       stock.save
     end
