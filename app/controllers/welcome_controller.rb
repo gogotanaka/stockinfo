@@ -5,40 +5,14 @@ def get_content(html, tag, className, index, childPath=nil)
 end
 class WelcomeController < ApplicationController
 	def index
-    url = "http://info.finance.yahoo.co.jp/ranking/?kd=56&mk=1"
+    url = "http://stocks.finance.yahoo.co.jp/stocks/detail/?code=3765.q"
 
     begin
       page = open(url)
     rescue OpenURI::HTTPError
       return
     end
-    @codes = Nokogiri::HTML(page.read).css("tr.rankingTabledata").map{|x| x.css("td")[1].content }
-
-    url = "http://news.finance.yahoo.co.jp/category/bus_all/"
-    begin
-      page = open(url)
-    rescue OpenURI::HTTPError
-      return
-    end
-    html = Nokogiri::HTML(page.read)
-    @doc = html.css("div.ymuiContainer")[0].content
-    @news = html.css("div.marB15").map{|x| ["http://news.finance.yahoo.co.jp" + x.css("a")[0][:href].to_s, x.css("a")[0].inner_text, x.css("li.ymuiDate").inner_text] }
-
-    url = "http://finance.yahoo.co.jp"
-    begin
-      page = open(url)
-    rescue OpenURI::HTTPError
-      return
-    end
-    html = Nokogiri::HTML(page.read)
-    x = html.css("div#slider")[0].css("dd")
-    [1,2,3,4].each do |i|
-      unless Summary.find_by_id(i)
-        Summary.create(comparison: x[i*2].inner_text, price: x[i*2-1].inner_text)
-      end
-    end
-
-    @summary = Summary.all
+    @tanaka = Nokogiri::HTML(page.read).css(".stocksDtl dd")[1].inner_text
   end
 
   def show

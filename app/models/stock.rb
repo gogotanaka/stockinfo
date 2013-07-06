@@ -1,5 +1,5 @@
 class Stock < ActiveRecord::Base
-  attr_accessible :code, :high, :low, :market, :name, :opening, :previousprice, :previousvolume, :price, :volume, :chart, :yahoo, :twitter
+  attr_accessible :code, :high, :low, :market, :name, :opening, :previousprice, :previousvolume, :price, :volume, :chart, :yahoo, :twitter, :industry
 
   def self.convert(url)
     begin
