@@ -21,6 +21,12 @@
 #set :output, 'log/cron.log'
 set :output, 'log/cron.log'
 set :environment, :development
-every 1.minute do
+every 30.minute do
   runner "BatchUpdate.execute"
+end
+every 1.hours do
+  runner "BatchUpdate.yahoo"
+end
+every 1.hours do
+  runner "BatchUpdate.twitter"
 end

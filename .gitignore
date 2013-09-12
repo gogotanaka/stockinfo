@@ -16,4 +16,5 @@ doc/
 .DS_Store
 .idea
 public/uploads
-/config/database.yml
+/config/database.yml/vendor/bundle
+/vendor/bundle
