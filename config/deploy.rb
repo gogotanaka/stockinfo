@@ -9,7 +9,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "git@bitbucket.org:tanakakazuki/#{application}.git"
+set :repository, "git@github.com:gogotanaka/#{application}.git"
 set :branch, "master"
 set :shared_children, shared_children + %w{public/uploads}
 
