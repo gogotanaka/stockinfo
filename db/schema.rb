@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130706031332) do
+ActiveRecord::Schema.define(:version => 20130620104748) do
 
   create_table "stocks", :force => true do |t|
     t.integer  "code"
     t.string   "name"
     t.string   "market"
+    t.string   "industry"
     t.string   "price"
     t.string   "previousprice"
     t.string   "volume"
@@ -25,11 +26,14 @@ ActiveRecord::Schema.define(:version => 20130706031332) do
     t.string   "high"
     t.string   "low"
     t.string   "chart"
+    t.string   "margin_buying"
+    t.string   "margin_selling"
+    t.string   "d_margin_buying"
+    t.string   "d_margin_selling"
     t.text     "twitter"
     t.text     "yahoo"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.string   "industry"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "stocks", ["code"], :name => "index_stocks_on_code"

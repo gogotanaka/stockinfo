@@ -4,6 +4,7 @@ class CreateStocks < ActiveRecord::Migration
       t.integer :code
       t.string :name
       t.string :market
+      t.string :industry
       t.string :price
       t.string :previousprice
       t.string :volume
@@ -12,6 +13,10 @@ class CreateStocks < ActiveRecord::Migration
       t.string :high
       t.string :low
       t.string :chart
+      t.string :margin_buying
+      t.string :margin_selling
+      t.string :d_margin_buying
+      t.string :d_margin_selling     
       t.text :twitter
       t.text :yahoo
       t.timestamps
