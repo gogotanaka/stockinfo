@@ -1,11 +1,12 @@
 upstream unicorn {
-  server unix:/tmp/unicorn.stockinfo.sock fail_timeout=0;
+  server unix:/tmp/unicorn.<%= application %>.sock fail_timeout=0;
 }
 
 server {
   listen 80 default deferred;
-  # server_name example.com;
-  root /home/deployer/apps/stockinfo/current/public;
+  # :TODO
+  # server_name porepo.net www.porepo.net stores.porepo.net;
+  root <%= current_path %>/public;
 
   location ^~ /assets/ {
     gzip_static on;
