@@ -8,7 +8,7 @@ load "config/recipes/nodejs"
 load "config/recipes/rbenv"
 load "config/recipes/check"
 
-server "106.187.46.171", :web, :app, :db, primary: true
+server "106.187.54.79", :web, :app, :db, primary: true
 
 set :application, "stockinfo"
 set :user, "deployer"
