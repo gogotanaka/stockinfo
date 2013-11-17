@@ -10,6 +10,12 @@ load "config/recipes/check"
 
 server "106.187.54.79", :web, :app, :db, primary: true
 
+role :whenever, "106.187.54.79"
+
+set :whenever_roles, "whenever"
+set :whenever_command, "bundle exec whenever"
+require 'whenever/capistrano'
+
 set :application, "stockinfo"
 set :user, "deployer"
 set :deploy_to, "/home/#{user}/apps/#{application}"
